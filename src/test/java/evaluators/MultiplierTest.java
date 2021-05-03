@@ -15,8 +15,14 @@ class MultiplierTest {
     }
 
     @Test
+    void evaluate_shouldAddTwoOperands_whenMultipleValidOperatorsPresent() {
+        assertEquals(12, multiplier.evaluate("2*+6"));
+        assertEquals(4, multiplier.evaluate("-2*-2"));
+    }
+
+    @Test
     void pattern_shouldReturnPatternForMultiplyOperation() {
-        assertEquals("-*(\\d+\\.*\\d*\\*-*\\d+\\.*\\d*)", multiplier.pattern().toString());
+        assertEquals("-*(\\d+\\.*\\d*\\*[\\+-]*\\d+\\.*\\d*)", multiplier.pattern().toString());
     }
 
     @Test

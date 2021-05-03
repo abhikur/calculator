@@ -15,6 +15,12 @@ class DividerTest {
     }
 
     @Test
+    void evaluate_shouldDivideTwoOperands_whenMultipleValidOperatorsPresent() {
+        assertEquals(-1, divider.evaluate("-2/+2"));
+        assertEquals(1, divider.evaluate("-2/-2"));
+    }
+
+    @Test
     void pattern_shouldReturnPatternForDivideOperation() {
         assertEquals("-*(\\d+\\.*\\d*/-*\\d+\\.*\\d*)", divider.pattern().toString());
     }

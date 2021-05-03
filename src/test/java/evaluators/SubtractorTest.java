@@ -15,8 +15,14 @@ class SubtractorTest {
     }
 
     @Test
+    void evaluate_shouldAddTwoOperands_whenMultipleValidOperatorsPresent() {
+        assertEquals(-8.0, subtractor.evaluate("-10.5--2.5"));
+        assertEquals(-13.0, subtractor.evaluate("-10.5-+2.5"));
+    }
+
+    @Test
     void pattern_shouldReturnPatternForSubtractOperation() {
-        assertEquals("-*(\\d+\\.*\\d*-\\d+\\.*\\d*)", subtractor.pattern().toString());
+        assertEquals("-*(\\d+\\.*\\d*-[\\+-]*\\d+\\.*\\d*)", subtractor.pattern().toString());
     }
 
     @Test

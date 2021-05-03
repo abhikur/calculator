@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class Multiplier extends Evaluator {
 
-    private static final String MULTIPLY_REGEX = "-*(\\d+\\.*\\d*\\*-*\\d+\\.*\\d*)";
+    private static final String MULTIPLY_REGEX = "-*(\\d+\\.*\\d*\\*[\\+-]*\\d+\\.*\\d*)";
 
     public double evaluate(String expression) {
         String[] numbers = expression.split("\\*");

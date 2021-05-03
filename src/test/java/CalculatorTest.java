@@ -24,6 +24,9 @@ class CalculatorTest {
         assertEquals(-20, calculator.evaluate("-10*2"));
         assertEquals(20, calculator.evaluate("-10*-2"));
         assertEquals(26.25, calculator.evaluate("-10.5*-2.5"));
+        assertEquals(-26.25, calculator.evaluate("-10.5*+2.5"));
+        assertEquals(-13.0, calculator.evaluate("-10.5+-2.5"));
+        assertEquals(-8.0, calculator.evaluate("-10.5--2.5"));
     }
 
     @Test

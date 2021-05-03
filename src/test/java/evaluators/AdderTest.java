@@ -15,8 +15,15 @@ class AdderTest {
     }
 
     @Test
+    void evaluate_shouldAddTwoOperands_whenMultipleValidOperatorsPresent() {
+        assertEquals(2, adder.evaluate("4+-2"));
+        assertEquals(0, adder.evaluate("-2++2"));
+        assertEquals(4, adder.evaluate("2+++2"));
+    }
+
+    @Test
     void pattern_shouldReturnPatternForAddOperation() {
-        assertEquals("-*(\\d+\\.*\\d*\\+\\d+\\.*\\d*)", adder.pattern().toString());
+        assertEquals("-*(\\d+\\.*\\d*\\+[\\+-]*\\d+\\.*\\d*)", adder.pattern().toString());
     }
 
     @Test
